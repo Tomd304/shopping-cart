@@ -6,24 +6,10 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
   return (
     <div className="navbar">
-      <p style={{ fontSize: 24, fontWeight: 400 }}>title</p>
-      {props.page == "homepage" && (
-        <Link style={{ fontSize: 24, fontWeight: 400 }} to="/shop">
-          shop
-        </Link>
-      )}
-      {props.page == "shop" && (
-        <Link style={{ fontSize: 24, fontWeight: 400 }} to="/">
-          homepage
-        </Link>
-      )}
-
+      <Link to="/">title</Link>
+      {props.page == "homepage" && <Link to="/shop">shop</Link>}
       <p>
-        <FontAwesomeIcon
-          size="1x"
-          style={{ fontSize: 24, cursor: "pointer" }}
-          icon={faShoppingCart}
-        />
+        <FontAwesomeIcon size="1x" icon={faShoppingCart} />
       </p>
     </div>
   );
