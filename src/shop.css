@@ -1,0 +1,41 @@
+.cardContainer {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid slategray;
+    border-radius: 16px;
+    padding: 0 20px;
+}
+
+.cardText {
+    text-align: center;
+    font-size: 16px;
+    width: 250px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cardArtist {
+    font-weight: 600;
+
+}
+
+.cardPrice {
+    font-weight: lighter;
+}
+
+.card img {
+    border-radius: 16px;
+}
