@@ -4,7 +4,7 @@ import index from "./index.css";
 const Homepage = () => {
   return (
     <div>
-      <Navbar page="homepage" />
+      <Navbar />
       <h1>This is the homepage component</h1>
     </div>
   );

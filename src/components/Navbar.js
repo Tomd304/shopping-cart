@@ -7,7 +7,7 @@ const Navbar = (props) => {
   return (
     <div className="navbar">
       <Link to="/">title</Link>
-      {props.page == "homepage" && <Link to="/shop">shop</Link>}
+      {!props.shop && <Link to="/shop">shop</Link>}
       <p>
         <FontAwesomeIcon size="1x" icon={faShoppingCart} />
       </p>
