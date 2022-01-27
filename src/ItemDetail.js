@@ -8,9 +8,9 @@ const ItemDetail = () => {
   const record = getRecords().filter((item) => item.id == params.id)[0];
   return (
     <div>
-      <Navbar page="shop" />
+      <Navbar />
       <div className="detailContainer">
-        <img src={record.img} />
+        <img src={record.img} alt="album cover" />
         <h1>{record.artistName}</h1>
         <h1>{record.albumName}</h1>
         <h1>£{record.price}</h1>
