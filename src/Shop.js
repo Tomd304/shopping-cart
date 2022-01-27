@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import shopStyle from "./shop.css";
 import getRecords from "./records";
 import { useState } from "react";
@@ -26,12 +25,11 @@ const Shop = (props) => {
   };
 
   const handleClick = (e, name) => {
-    props.updateBasket(name, cartQuantity[name]);
+    props.updateBasket(name, parseInt(cartQuantity[name]));
   };
 
   return (
     <div>
-      <Navbar />
       <h1 style={{ marginTop: 40, marginBottom: 40, textAlign: "center" }}>
         Vinyl Record Store
       </h1>

@@ -6,19 +6,44 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 
 const Switcher = () => {
-  const [basket, setBasket] = useState({});
+  const [basket, setBasket] = useState([]);
 
   const updateBasket = (name, quantity) => {
-    const currentQuantity = basket[name];
+    const currentQuantity = basket.find((item) => item.name == name);
     if (currentQuantity) {
-      setBasket({ ...basket, [name]: parseInt(quantity) + basket[name] });
+      setBasket(
+        basket.map((item) => {
+          if (item.name == name) {
+            return {
+              name,
+              quantity: item.quantity + quantity,
+            };
+          } else {
+            return item;
+          }
+        })
+      );
     } else {
-      setBasket({ ...basket, [name]: parseInt(quantity) });
+      setBasket([
+        ...basket,
+        {
+          name,
+          quantity,
+        },
+      ]);
     }
   };
 
+  //{ ...basket, [name]: parseInt(quantity) + basket[name] });
+  //} else {
+  //setBasket({ ...basket, [name]: parseInt(quantity) });
+  //}
+  // };
+  console.log(basket);
+
   return (
     <BrowserRouter>
+      <Navbar basket={basket} />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<Shop updateBasket={updateBasket} />} />

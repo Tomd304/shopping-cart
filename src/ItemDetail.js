@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import itemStyle from "./item.css";
 import { useParams } from "react-router-dom";
 import getRecords from "./records";
@@ -8,7 +7,6 @@ const ItemDetail = () => {
   const record = getRecords().filter((item) => item.id == params.id)[0];
   return (
     <div>
-      <Navbar />
       <div className="detailContainer">
         <img src={record.img} alt="album cover" />
         <h1>{record.artistName}</h1>
