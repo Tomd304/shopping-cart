@@ -47,6 +47,10 @@ const Switcher = () => {
     );
   };
 
+  const emptyBasket = () => {
+    setBasket([]);
+  };
+
   return (
     <BrowserRouter>
       <Navbar basket={basket} />
@@ -56,7 +60,13 @@ const Switcher = () => {
         <Route path="/shop/:id" element={<ItemDetail />} />
         <Route
           path="/cart"
-          element={<Cart updateBasket={updateBasket} basket={basket} />}
+          element={
+            <Cart
+              updateBasket={updateBasket}
+              basket={basket}
+              emptyBasket={emptyBasket}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

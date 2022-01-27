@@ -24,6 +24,19 @@ const Cart = (props) => {
     props.updateBasket(name, quantity);
   };
 
+  const handleClick = () => {
+    alert("Order Received!");
+    props.emptyBasket();
+  };
+
+  const totalPrice = props.basket.reduce(
+    (prev, cur) => {
+      const record = records.find((item) => item.albumName == cur.name);
+      return { price: prev.price + record.price * cur.quantity };
+    },
+    { price: 0 }
+  ).price;
+
   return (
     <div className="cartContainer">
       {props.basket.map((item) => {
@@ -68,6 +81,16 @@ const Cart = (props) => {
           </div>
         );
       })}
+
+      {props.basket.length > 0 && (
+        <div className="purchase">
+          <h2>Total Price: £{totalPrice}</h2>
+          <button type="button" className="purchaseBtn" onClick={handleClick}>
+            Purchase
+          </button>
+        </div>
+      )}
+      {props.basket.length == 0 && <h1>Cart Empty</h1>}
     </div>
   );
 };
