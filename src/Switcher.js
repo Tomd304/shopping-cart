@@ -34,13 +34,6 @@ const Switcher = () => {
     }
   };
 
-  //{ ...basket, [name]: parseInt(quantity) + basket[name] });
-  //} else {
-  //setBasket({ ...basket, [name]: parseInt(quantity) });
-  //}
-  // };
-  console.log(basket);
-
   return (
     <BrowserRouter>
       <Navbar basket={basket} />
