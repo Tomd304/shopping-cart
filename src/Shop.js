@@ -25,7 +25,7 @@ const Shop = (props) => {
   };
 
   const handleClick = (e, name) => {
-    props.updateBasket(name, parseInt(cartQuantity[name]));
+    props.addToBasket(name, parseInt(cartQuantity[name]));
   };
 
   return (

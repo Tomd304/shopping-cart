@@ -25,13 +25,17 @@ const Navbar = (props) => {
     <div className="navbar">
       <Link to="/">title</Link>
       {!props.shop && <Link to="/shop">shop</Link>}
-      <div>
-        <FontAwesomeIcon
-          size="1x"
-          icon={faShoppingCart}
-          style={{ color: "white" }}
-        />
-        <p style={{ fontSize: 16 }}>x{basketQuantity}</p>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 12 }}>
+        <Link to="/cart">
+          <FontAwesomeIcon
+            size="1x"
+            icon={faShoppingCart}
+            style={{ color: "white" }}
+          />
+        </Link>
+        {basketQuantity > 0 && (
+          <p style={{ fontSize: 16 }}>x{basketQuantity}</p>
+        )}
       </div>
     </div>
   );
